@@ -1,0 +1,32 @@
+
+body {
+    background-color: #E8ECEF;
+  }
+  
+  .centered {
+      padding-top: 200px;
+      text-align: center;
+  }
+  
+  .secret-text {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    background-color: #000;
+  }
+  
+  .my-btn{
+    /* width: 10px; */
+    margin-bottom: 20px;
+  }
+
+  
+  .container {
+    margin-top: 20px;
+  }
+  .page {
+    display: none;
+  }
+  .page-active {
+    display: block;
+  }

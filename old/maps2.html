@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Places Search Box</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script> -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+  </head>
+  <body>
+    <link href="style-maps.css" rel="stylesheet">
+    <script src="script-maps.js"></script>
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCELkuw_HlYY-ySUPwuL-t8lkybhgbP23Y&libraries=places&callback=initAutocomplete"
+         async defer></script>
+    
+    <script>
+        function manange(){
+            var bt = document.getElementById('submit');
+            bt.disabled=false;
+        }
+        var resp;
+        function submitLatLng(){
+            var latlng = {
+                uname:"username",
+                lat:latSend,
+                lng:lngSend
+            }
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify(latlng),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+            })
+            .then(response => response.json())
+            .then(response => {
+                resp=response;
+                printresp()
+            });
+        }
+        function printresp(){
+            console.log(resp);
+        }
+    </script>
+
+    <div class="container-fluid">
+        <br>
+        <h3>Select your location and click on submit</h3>
+        <button onclick="submitLatLng()" class="btn btn-outline-primary" id="submit" disabled>Submit</button>
+    </div>
+  </body>
+</html>

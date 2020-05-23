@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Activity-Organier</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/bootstrap-social.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel=icon href=favicon/favicon.ico>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <link rel="stylesheet" href="css/navbar-style.css">
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-skating fa-2x"></i></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                
+                <ul class="navbar-nav ml-auto">
+                    <li>
+                        <a class="nav-link" href="#">My Activities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Groups</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-skating fa-2x" style="width: 32px; height: 32px;"></i>
+                      </a>
+                        <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#">Edit Profile</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Logout</a>
+                        </div>
+                      </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <div id="map"></div>
+    
+    <link href="style-maps.css" rel="stylesheet">
+    <script src="script-maps.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCELkuw_HlYY-ySUPwuL-t8lkybhgbP23Y&libraries=places&callback=initAutocomplete"
+         async defer>
+    </script>
+    <script>
+        function manange(){
+            var bt = document.getElementById('submit');
+            bt.disabled=false;
+        }
+        var resp;
+        function submitLatLng(){
+            var latlng = {
+                uname:"username",
+                lat:latSend,
+                lng:lngSend
+            }
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify(latlng),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+            })
+            .then(response => response.json())
+            .then(response => {
+                resp=response;
+                printresp()
+            });
+        }
+        function printresp(){
+            console.log(resp);
+        }
+    </script>
+
+    <div class="container-fluid">
+        <h3>Select your location and click on submit</h3>
+        <button onclick="submitLatLng()" id="submit" disabled>Submit</button>
+    </div>
+
+    
+
+</body>
+</html>

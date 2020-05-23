@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Activity-Organier</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap-social.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel=icon href=favicon/favicon.ico>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+        <script src="paging.js"></script>
+    </head>
+    <body>
+        <div id="listingTable"></div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a href="javascript:prevPage()" class="page-link" id="btn_prev">Prev</a>
+                </li>
+                <div id="bar" class="pagination">
+                    <!-- <li class="page-item"><a class="page-link" href="javascript:changePage(1)">1</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:changePage(2)">2</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:changePage(3)">3</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:changePage(4)">4</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:changePage(5)">5</a></li> -->
+                </div>
+                
+                <li class="page-item">
+                    <a href="javascript:nextPage()" class="page-link" id="btn_next">Next</a>  
+                </li>
+            </ul>
+            
+            
+        </nav>
+        
+        page: <span id="page"></span>
+
+
+        <!-- <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="javascript:prevPage()">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:prevPage()">Next</a></li>
+            </ul>
+        </nav> -->
+    </body>
+</html>
