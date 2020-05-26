@@ -3,22 +3,37 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Activity-Organier</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/bootstrap-social.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel=icon href=favicon/favicon.ico>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Activity-Organier</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/bootstrap-social.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel=icon href=favicon/favicon.ico>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
+
+    <script>
+        console.log(is_group_member);
+        // grpid = group[0]._id;
+        if(is_group_member == true){
+            b = document.getElementById('buttonToJoin');
+            b.innerHTML = "Leave Group";
+            f = document.getElementById('formToJoin');
+            f.setAttribute("action", "/leave-group/" + grpid)
+        }
+        else{
+            b = document.getElementById('buttonToJoin');
+            b.innerHTML = "Join Group";
+            f = document.getElementById('formToJoin');
+            f.setAttribute("action", "/join/" + grpid)
+        }
+    </script>
+
 
     <br>
     <br>
